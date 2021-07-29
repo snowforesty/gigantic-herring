@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .map_container {
+                position:relative;
+                height:165px;
+            }
+            #minidot {
+                position:absolute;
+                width:24px;
+                height:24px;
+                z-index:10;
+//                top:60px;
+//                left:138px;
+            }
+        </style>
+        </head>
+    <body class="map_container" style="text-align:center; overflow-y:hidden; margin:10px">
+        <div class="map_container" style="display:inline-block">
+             <img style="width:300px" src="./minimap.png">
+             <img id="minidot" src="./minidot.svg">
+        <script type="text/javascript">
+//          var url = new URL("https://www.xxx.yyy?x=0&y=0");
+            var url = new URL(window.location);
+            var position = document.getElementById('minidot');
+            position.style.left = url.searchParams.get('x')-12 + "px";
+            position.style.top = url.searchParams.get('y')-22 + "px";
+        </script>
+        </div>
+    </body>
+</html>
