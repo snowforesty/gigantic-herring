@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+// URL: http://snowforesty.github.io/gigantic-herring/minimap.html
 <html>
     <head>
         <style>
@@ -11,17 +12,15 @@
                 width:24px;
                 height:24px;
                 z-index:10;
-//                top:60px;
-//                left:138px;
-            }
+                padding:inherit;
+            }        
         </style>
         </head>
-    <body class="map_container" style="text-align:center; overflow-y:hidden; margin:10px">
-        <div class="map_container" style="display:inline-block">
+    <body class="map_container" style="text-align:center; overflow-y:hidden; margin:0px">
+        <div class="map_container" style="display:inline-block; padding:10px">
              <img style="width:300px" src="./minimap.png">
              <img id="minidot" src="./minidot.svg">
         <script type="text/javascript">
-//          var url = new URL("https://www.xxx.yyy?x=0&y=0");
             var url = new URL(window.location);
             var position = document.getElementById('minidot');
             position.style.left = url.searchParams.get('x')-12 + "px";
