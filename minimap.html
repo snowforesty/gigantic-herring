@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<!-- URL: http://snowforesty.github.io/gigantic-herring/minimap.html -->
-<html>
+<!-- URL: http://snowforesty.github.io/gigantic-herring/minimap.html 
+                parameter 형식: ?x=__&y=__&x=__&y=__&...  -->
+<html lang=ko>
     <head>
         <style>
-            .map_container {
+            body {
+                text-align:center;
+                overflow-y:hidden;
+            }
+            div {
                 position:relative;
-                height:165px;
+                display:inline-block;
             }
             .minidot {
                 position:absolute;
+                padding:inherit;
                 width:24px;
                 height:24px;
                 z-index:10;
-                padding:inherit;
             }        
         </style>
-        </head>
-    <body class="map_container" style="text-align:center; overflow-y:hidden; margin:0px">
-        <div class="map_container" style="display:inline-block; padding:10px">
-             <img style="width:300px" src="./minimap.png">
+    </head>
+    <body>
+        <div>
+             <img src="./minimap.png">
  
         <script type="text/javascript">
-/*          const url = new URL("http://www.xxx.yyy/minimap.html?x=80&y=76&x=95&y=82&x=135&y=76&x=80&y=106&x=135&y=142"); 
-            const urlSearch = new URLSearchParams(url.search);
-*/
-          const urlSearch = new URLSearchParams(location.search);    
+            const urlSearch = new URLSearchParams(location.search);    
 
             const x = urlSearch.getAll('x');
             const y = urlSearch.getAll('y');
 
             for (let i=0; i < x.length; i++) {
-                document.write('<img class="minidot" id="dot' + i + '" style="left:' + (x[i]-12) + 'px; top:' + (y[i]-23) + 'px" src="./minidot.svg">');
+                document.write('<img class="minidot" style="left:' + (x[i]-12) + 'px; top:' + (y[i]-23) + 'px" src="./minidot.svg">');
             }
 
         </script>
